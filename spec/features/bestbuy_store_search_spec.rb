@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 RSpec.feature "user can search for stores", type: :feature do
-  describe "searching by zipcode" do
+  scenario "searching by zipcode" do
     zip = 80202
 
     visit root_path
-    fill_in "Search", zip
+    fill_in "Search", with: zip
     click_on "search"
     expect(current_path).to eq('/search')
     expect(page).to have_content("16 Total Stores found")
