@@ -57,4 +57,5 @@ RSpec.describe "requests items via API" do
     expect(response).to have_http_status(418)
   end
 
+
 end
