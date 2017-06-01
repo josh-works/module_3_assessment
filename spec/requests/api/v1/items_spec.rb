@@ -29,14 +29,16 @@ RSpec.describe "requests items via API" do
     expect(result["name"]).to eq("foo")
   end
 
-  xit "can create a new item" do
+  it "can create a new item" do
     item_params = {name: "foo", description: "barbaz", image_url: "www.image.jpg"}
     expect(Item.count).to eq(0)
 
-    post '/api/v1/items', params: {item: item_params}
+    post '/api/v1/items', {item: item_params}
+    item = Item.last
 
     expect(response).to be_success
     expect(Item.count).to eq(1)
+    expect(item.name).to eq("foo")
   end
 
 end
