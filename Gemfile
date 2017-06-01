@@ -12,9 +12,15 @@ gem "faker"
 gem "therubyracer"
 gem "less-rails-bootstrap"
 gem "minitest-rails"
+gem 'figaro'
+gem 'faraday'
 
 group :development do
   gem "spring"
+  gem 'launchy'
+  gem 'awesome_print'
+  gem 'rspec-rails'
+  gem 'capybara'
 end
 
 group :development, :test do
