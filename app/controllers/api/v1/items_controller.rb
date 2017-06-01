@@ -4,4 +4,8 @@ class Api::V1::ItemsController < ApplicationController
     @items = Item.all
   end
 
+  def show
+    @item = Item.find(params[:id])
+  end
+
 end

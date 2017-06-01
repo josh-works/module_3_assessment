@@ -21,12 +21,12 @@ RSpec.describe "requests items via API" do
   it "can show a single item" do
     item = Item.create(name: "foo", description: "barbaz", image_url: "www.image.jpg")
 
-    get "/api/v1/itesm/#{item.id}"
+    get "/api/v1/items/#{item.id}"
     expect(response).to be_success
 
     result = JSON.parse(response.body)
 
-    expect(result["name"]).to be("foo")
+    expect(result["name"]).to eq("foo")
   end
 
   xit "can create a new item" do
