@@ -9,7 +9,11 @@ RSpec.describe "requests items" do
     get '/api/v1/items'
 
     expect(response).to be_success
+    results = JSON.parse(response.body)
+    item_1 = results.first
 
+    expect(results.count).to eq(3)
+    expect(item_1["name"]).to eq("foo")
   end
 
 end
