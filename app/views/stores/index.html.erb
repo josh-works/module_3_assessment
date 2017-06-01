@@ -1,0 +1,14 @@
+<h2><%= @stores.count %> Total Stores Found</h2>
+<div class="stores_list">
+  <% @stores.each do |store| %>
+    <div class="store">
+      <h3><%= store.name %> </h3>
+      <ul>
+        <li>Distance: <%= store.distance %> </li>
+        <li>Phone number: <%= store.phone_number %> </li>
+        <li>Store Type: <%= store.store_type %> </li>
+      </ul>
+    </div>
+  <% end %>
+
+</div>
