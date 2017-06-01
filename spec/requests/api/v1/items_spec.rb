@@ -22,7 +22,7 @@ RSpec.describe "requests items via API" do
     item = Item.create(name: "foo", description: "barbaz", image_url: "www.image.jpg")
 
     get "/api/v1/items/#{item.id}"
-    expect(response).to be_success
+    expect(response).to have_http_status(200)
 
     result = JSON.parse(response.body)
 
@@ -36,7 +36,7 @@ RSpec.describe "requests items via API" do
     post '/api/v1/items', {item: item_params}
     item = Item.last
 
-    expect(response).to be_success
+    expect(response).to have_http_status(201)
     expect(Item.count).to eq(1)
     expect(item.name).to eq("foo")
   end
