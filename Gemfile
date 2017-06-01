@@ -16,6 +16,7 @@ gem 'figaro'
 gem 'faraday'
 
 group :development do
+  gem 'factory_girl_rails'
   gem "spring"
   gem 'launchy'
   gem 'awesome_print'
