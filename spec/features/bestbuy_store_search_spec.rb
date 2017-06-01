@@ -6,7 +6,7 @@ RSpec.feature "user can search for stores", type: :feature do
 
     visit root_path
     fill_in "Search", with: zip
-    click_on "search"
+    click_on "Search"
     expect(current_path).to eq('/search')
     expect(page).to have_content("16 Total Stores found")
 
