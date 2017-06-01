@@ -12,10 +12,8 @@ class Store
   end
 
   def self.find_by_zip(zip)
-    
     service = BestbuyService.new
-    stores = service.find_stores_by_zip(zip)
-    stores.map do |store|
+    service.find_stores_by_zip(zip).map do |store|
       Store.new(store)
     end
   end
