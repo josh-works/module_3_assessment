@@ -195,7 +195,7 @@ DEPENDENCIES
   awesome_print
   capybara
   coffee-rails (~> 4.0.0)
-  factory_girl_rails
+  factory_girl_rails (~> 4.0)
   faker
   faraday
   figaro

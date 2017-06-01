@@ -16,15 +16,16 @@ gem 'figaro'
 gem 'faraday'
 
 group :development do
-  gem 'factory_girl_rails'
   gem "spring"
-  gem 'launchy'
-  gem 'awesome_print'
-  gem 'rspec-rails'
   gem 'capybara'
 end
 
 group :development, :test do
+  gem 'launchy'
+  gem 'awesome_print'
+  gem "factory_girl_rails", "~> 4.0"
+
+  gem 'rspec-rails'
   gem "minitest-rails-capybara"
   gem "pry", :require => "pry"
 end
