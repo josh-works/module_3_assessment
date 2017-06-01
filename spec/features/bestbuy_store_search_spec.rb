@@ -16,9 +16,9 @@ RSpec.feature "user can search for stores", type: :feature do
 
     within(".store", match: :first) do
       # expect(page).to have_selector(h3)
-      expect(page).to have_content("Distance:  ")
-      expect(page).to have_content("Phone number:  ")
-      expect(page).to have_content("Store Type:  ")
+      expect(page).to have_content("Distance: 3.45")
+      expect(page).to have_content("Phone number: 303-270-9189")
+      expect(page).to have_content("Store Type: Mobile SAS")
     end
   end
 end

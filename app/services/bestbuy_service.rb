@@ -1,7 +1,7 @@
 class BestbuyService
 
   def initialize
-    @conn ||= Faraday.new('https://api.bestbuy.com')
+    @conn = Faraday.new('https://api.bestbuy.com')
     @key = ENV["BESTBUY_API_KEY"]
   end
 

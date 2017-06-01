@@ -24,7 +24,7 @@ RSpec.describe Store, type: :model do
       expect(stores.count).to eq(16)
       expect(store).to respond_to(:name)
       expect(store).to respond_to(:distance)
-
+      
     end
   end
 end
