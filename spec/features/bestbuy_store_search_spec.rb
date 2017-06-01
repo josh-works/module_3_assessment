@@ -20,6 +20,5 @@ RSpec.feature "user can search for stores", type: :feature do
       expect(page).to have_content("Phone number:  ")
       expect(page).to have_content("Store Type:  ")
     end
-
   end
 end
