@@ -14,4 +14,17 @@ RSpec.describe Store, type: :model do
       expect(store.distance).to eq(3.45)
     end
   end
+
+  context ".find_by_zip" do
+    it "returns list of stores" do
+      zip = 80202
+      stores = Store.find_by_zip(zip)
+      store = stores.first
+
+      expect(stores.count).to eq(16)
+      expect(store).to respond_to(:name)
+      expect(store).to respond_to(:distance)
+
+    end
+  end
 end
