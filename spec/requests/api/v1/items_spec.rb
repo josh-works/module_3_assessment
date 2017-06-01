@@ -41,4 +41,20 @@ RSpec.describe "requests items via API" do
     expect(item.name).to eq("foo")
   end
 
+  it "can delete an item" do
+    item = Item.create(name: "foo", description: "barbaz", image_url: "www.image.jpg")
+
+    expect(Item.count).to eq(1)
+
+    delete "/api/v1/items/#{item.id}"
+
+    expect(response).to have_http_status(204)
+    expect(Item.count).to eq(0)
+  end
+
+  it "cannot delete an item that doesn't exist" do
+    delete "api/v1/items/33"
+    expect(response).to have_http_status(418)
+  end
+
 end

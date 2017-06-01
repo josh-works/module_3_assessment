@@ -9,7 +9,15 @@ class Api::V1::ItemsController < ApplicationController
   end
 
   def create
-    render json: Item.create(item_params)
+    render json: Item.create(item_params), status: 204
+  end
+
+  def destroy
+    @item = Item.find(params[:id])
+    @item.delete
+    render :nothing => true, status: 204
+  rescue ActiveRecord::RecordNotFound
+    render :nothing => true, status: 418
   end
 
   private
